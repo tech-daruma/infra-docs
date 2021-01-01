@@ -21,7 +21,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: pwd; ls-la; hugo --minify
+        run: pwd; ls -la; hugo --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
