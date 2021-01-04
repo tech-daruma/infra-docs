@@ -1,4 +1,4 @@
-# jetBlue - AKS knowledge transfer
+# JB - AKS knowledge transfer
 
 ## AKS Cluster design review and deployment process
   * Network design, placement, FW requirements
