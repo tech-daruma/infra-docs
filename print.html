@@ -100,7 +100,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Documentation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="aks/index.html"><strong aria-hidden="true">1.1.</strong> AKS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="aks/cluster-design/AKS-CLUSTER-DESIGN.html"><strong aria-hidden="true">1.1.1.</strong> Cluster Design</a></li><li class="spacer"></li></ol></li></ol></li><li class="chapter-item expanded "><a href="misc/contributors.html">Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Documentation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="aks/index.html"><strong aria-hidden="true">1.1.</strong> AKS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="aks/cluster-design/AKS-CLUSTER-DESIGN.html"><strong aria-hidden="true">1.1.1.</strong> Cluster Design</a></li><li class="chapter-item expanded "><a href="aks/tasks.html"><strong aria-hidden="true">1.1.2.</strong> Upcoming Ops Tasks</a></li><li class="spacer"></li></ol></li></ol></li><li class="chapter-item expanded "><a href="misc/contributors.html">Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -241,6 +241,28 @@
 <li>Troubleshooting 101</li>
 <li>Upcoming updates from Microsoft and recommended actions. </li>
 </ul>
+<h1><a class="header" href="#aks-important-maintanence-tasks" id="aks-important-maintanence-tasks">AKS important maintanence tasks</a></h1>
+<hr />
+<p><strong>NOTE</strong></p>
+<p>These are upcoming infra tasks to improve general stability and performance of AKS. These include, but are not limited to:</p>
+<ul>
+<li>Ephemeral OS disks</li>
+<li>Podidentity upgrade to (NMI) only mode and v1.7.1 +.</li>
+<li>Control Plane and Node Pool upgrades to 1.18.x</li>
+<li>Node Image upgrades &amp; Automating node images (full vs semi)</li>
+<li>Thread of DISK I/O issues on AKS in general given <a href="https://github.com/Azure/AKS/issues/1373">here</a></li>
+</ul>
+<hr />
+<h2><a class="header" href="#ephemeral-os-disks" id="ephemeral-os-disks">Ephemeral OS disks</a></h2>
+<p>This resolves many Disk I/O issues for container hosts in general.</p>
+<hr />
+<p><strong>IMPORTANT</strong></p>
+<p>With ephemeral OS you can deploy VM and instance images up to the size of the VM cache. In the AKS case, the default node OS disk configuration uses 128GB, which means that you need a VM size that has a cache larger than 128GB. The default Standard_DS2_v2 has a cache size of 86GB, which is not large enough. The Standard_DS3_v2 has a cache size of 172GB, which is large enough. You can also reduce the default size of the OS disk by using --node-osdisk-size. The minimum size for AKS images is 30GB.</p>
+<hr />
+<ol>
+<li>General doc on using Ephemeral OS Disk with AKS in general is given <a href="https://docs.microsoft.com/en-us/azure/aks/cluster-configuration#ephemeral-os">here</a></li>
+<li></li>
+</ol>
 <h1><a class="header" href="#contributors" id="contributors">Contributors</a></h1>
 <p>Here is a list of the contributors who have helped improving Documentation. Big
 shout-out to them!</p>
